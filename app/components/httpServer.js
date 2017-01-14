@@ -3,7 +3,7 @@
  */
 'use strict';
 (function (angular) {
-	angular.module("myApp.service.httpServer",[]).service("httpServer",["$window","$document",function ($window,$document)
+	angular.module("myApp.service.httpServer",[]).service("HttpServer",["$window","$document",function ($window,$document)
 	{
 		this.jsonP = function (url,data,callback) {
 			var querystring = url.indexOf('?') == -1 ? '?' : '&';
@@ -14,7 +14,7 @@
 			querystring+= "callback="+callbackName;
 			$window[callbackName] = callback;
 			var scriptElement = $document[0].createElement('script');
-			scriptElement[src]= url+querystring;
+			scriptElement.src= url+querystring;
 			$document[0].body.appendChild(scriptElement);
 		}
 	}]);

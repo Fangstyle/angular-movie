@@ -103,3 +103,10 @@ body {
 	display: inline-block;
 	border-radius: 50%;
 }
+
+.list-group .list-group-item .badge {
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	margin-top: -6px;
+}
