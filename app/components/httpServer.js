@@ -15,6 +15,12 @@
 			$window[callbackName] = callback;
 			var scriptElement = $document[0].createElement('script');
 			scriptElement.src= url+querystring;
+			var scripts = $document[0].getElementsByTagName('script');
+			for(var i =0 ;i<scripts.length;i++){
+				if(scripts[i].src.indexOf("fang_jsonp_")){
+					scripts[i].parentNode.removeChild(scripts[i]);
+				}
+			}
 			$document[0].body.appendChild(scriptElement);
 		}
 	}]);

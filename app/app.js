@@ -7,5 +7,5 @@ angular.module('myApp', [
   'myApp.version'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/in_theaters'});
+  $routeProvider.otherwise({redirectTo: '/in_theaters/1'});
 }]);

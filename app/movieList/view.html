@@ -1,22 +1,25 @@
 <ul class="list-group">
 	<li class="list-group-item" ng-repeat="item in subjects">
 		<div class="media">
-		<a class="media-left" href="#">
-			<img ng-src="{{item.images.small}}" alt="{{item.title}}">
-		</a>
-		<div class="media-body">
-			<h4 class="media-heading">{{item.title}}</h4>
-			<p>导言:<span ng-repeat="castItem in item.casts">{{castItem.name+($last?'':'、')}}</span></p>
-			<p>上映时间:{{item.year}}</p>
-			<p>类型:{{item.genres.join("、")}}</p>
-		</div>
+			<a class="media-left" href="#">
+				<img ng-src="{{item.images.small}}" alt="{{item.title}}">
+			</a>
+			<div class="media-body">
+				<h4 class="media-heading">{{item.title}}</h4>
+				<p>导言:<span ng-repeat="castItem in item.casts">{{castItem.name+($last?'':'、')}}</span></p>
+				<p>上映时间:{{item.year}}</p>
+				<p>类型:{{item.genres.join("、")}}</p>
+			</div>
 			<span class="badge">{{item.rating.average}}</span>
 		</div>
 	</li>
 </ul>
-<nav>
-	<ul class="pager">
-		<li><a href="#">Previous</a></li>
-		<li><a href="#">Next</a></li>
-	</ul>
-</nav>
+<div class="bottom-tips" ng-show="loadFinish">
+	<p>总共：{{totalPage}}条记录，第{{currentPage}}/{{pages}}页</p>
+	<nav>
+		<ul class="pager">
+			<li ng-class="{disabled:currentPage<=1}"><a ng-click="ToPage(currentPage-1)">Previous</a></li>
+			<li ng-class="{disabled:currentPage>=pages}"><a ng-click="ToPage(currentPage+1)">Next</a></li>
+		</ul>
+	</nav>
+</div>
