@@ -38,9 +38,9 @@
 	<div class="row">
 		<div class="col-sm-3 col-md-2 sidebar">
 			<ul class="nav nav-sidebar">
-				<li ng-class="{active:leftStyle=='in_theaters'}"><a href="#/in_theaters/1">正在上映</a></li>
-				<li ng-class="{active:leftStyle=='coming_soon'}"><a href="#/coming_soon/1">将要上映</a></li>
-				<li ng-class="{active:leftStyle=='top250'}"><a href="#/top250/1">Top205</a></li>
+				<li auto-focus><a href="#/in_theaters/1">正在上映</a></li>
+				<li auto-focus><a href="#/coming_soon/1">将要上映</a></li>
+				<li auto-focus><a href="#/top250/1">Top205</a></li>
 			</ul>
 		</div>
 1
@@ -50,13 +50,14 @@
 	</div>
 </div>
 
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="components/httpServer.js"></script>
-  <script src="app.js"></script>
-  <script src="movieList/controller.js"></script>
-  <script src="components/version/version.js"></script>
-  <script src="components/version/version-directive.js"></script>
-  <script src="components/version/interpolate-filter.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-route/angular-route.js"></script>
+	<script src="components/httpServer.js"></script>
+	<script src="components/autoLeftControll.js"></script>
+	<script src="app.js"></script>
+	<script src="movieList/controller.js"></script>
+	<script src="components/version/version.js"></script>
+	<script src="components/version/version-directive.js"></script>
+	<script src="components/version/interpolate-filter.js"></script>
 </body>
 </html>
