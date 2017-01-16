@@ -12,15 +12,12 @@
 			}
 			var callbackName = "fang_jsonp_"+Math.random().toString().replace(".","");
 			querystring+= "callback="+callbackName;
-			$window[callbackName] = callback;
 			var scriptElement = $document[0].createElement('script');
 			scriptElement.src= url+querystring;
-			var scripts = $document[0].getElementsByTagName('script');
-			for(var i =0 ;i<scripts.length;i++){
-				if(scripts[i].src.indexOf("fang_jsonp_")){
-					scripts[i].parentNode.removeChild(scripts[i]);
-				}
-			}
+			$window[callbackName] = function (data) {
+				callback(data);
+				$document[0].body.removeChild(scriptElement);
+			};
 			$document[0].body.appendChild(scriptElement);
 		}
 	}]);

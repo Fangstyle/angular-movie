@@ -1,9 +1,10 @@
 <ul class="list-group">
 	<li class="list-group-item" ng-repeat="item in subjects">
+		<a href="#/{{item.id}}">
 		<div class="media">
-			<a class="media-left" href="#">
+			<div class="media-left" href="#">
 				<img ng-src="{{item.images.small}}" alt="{{item.title}}">
-			</a>
+			</div>
 			<div class="media-body">
 				<h4 class="media-heading">{{item.title}}</h4>
 				<p>导言:<span ng-repeat="castItem in item.casts">{{castItem.name+($last?'':'、')}}</span></p>
@@ -12,6 +13,7 @@
 			</div>
 			<span class="badge">{{item.rating.average}}</span>
 		</div>
+		</a>
 	</li>
 </ul>
 <div class="bottom-tips" ng-show="loadFinish">

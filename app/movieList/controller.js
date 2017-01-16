@@ -24,7 +24,7 @@ angular.module('myApp.movieList', ['ngRoute','myApp.service.httpServer'])
 		$scope.currentPage = page;
 		$scope.totalPage = 0;
 		$scope.pages=0;
-	    HttpServer.jsonP('https://api.douban.com/v2/movie/'+$routeParams.category,{count:count, start: start},function (data) {
+	    HttpServer.jsonP('https://api.douban.com/v2/movie/'+$routeParams.category,{count:count, start: start ,q:$routeParams.q},function (data) {
 		$scope.subjects =data.subjects;
 		$scope.totalPage = data.total;
 		$scope.start =data.start;
@@ -38,4 +38,7 @@ angular.module('myApp.movieList', ['ngRoute','myApp.service.httpServer'])
 				$route.updateParams({ page: page });
 				console.log(page);
 		};
+		$scope.toDetail = function (id) {
+			
+		}
 }]);

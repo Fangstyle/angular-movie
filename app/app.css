@@ -113,3 +113,6 @@ body {
 .bottom-tips .pager a{
 	cursor:pointer;
 }
+.list-group .list-group-item a{
+	text-decoration: none;
+}
