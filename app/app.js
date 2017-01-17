@@ -6,6 +6,7 @@ angular.module('myApp', [
 	'myApp.movieDetail',
 	'myApp.movieList',
 	'main_leftMenu_focus',
+	'main_movie_search',
 	'myApp.version'
 ]).config(['$routeProvider', function ($routeProvider) {
 	$routeProvider.otherwise({redirectTo: '/in_theaters/1'});
