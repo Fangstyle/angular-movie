@@ -39,6 +39,6 @@ angular.module('myApp.movieList', ['ngRoute','myApp.service.httpServer'])
 				console.log(page);
 		};
 		$scope.toDetail = function (id) {
-			
+
 		}
 }]);
